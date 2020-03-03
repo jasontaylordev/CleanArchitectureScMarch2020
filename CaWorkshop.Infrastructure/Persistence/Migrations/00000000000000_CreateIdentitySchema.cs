@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CaWorkshop.WebUI.Data.Migrations
+namespace CaWorkshop.Infrastructure.Persistence.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

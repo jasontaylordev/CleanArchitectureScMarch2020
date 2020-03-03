@@ -1,4 +1,4 @@
-﻿namespace CaWorkshop.WebUI.Models
+﻿namespace CaWorkshop.Domain.Entities
 {
     public enum PriorityLevel
     {

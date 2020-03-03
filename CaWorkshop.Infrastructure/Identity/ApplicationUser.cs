@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CaWorkshop.WebUI.Models
+namespace CaWorkshop.Infrastructure.Identity
 {
     public class ApplicationUser : IdentityUser
     {

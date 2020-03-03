@@ -1,4 +1,4 @@
-using CaWorkshop.WebUI.Data;
+using CaWorkshop.Infrastructure.Persistence;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

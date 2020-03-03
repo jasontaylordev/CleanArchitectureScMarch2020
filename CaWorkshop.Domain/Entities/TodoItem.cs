@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CaWorkshop.WebUI.Models
+namespace CaWorkshop.Domain.Entities
 {
     public class TodoItem
     {

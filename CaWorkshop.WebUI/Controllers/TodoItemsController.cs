@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CaWorkshop.WebUI.Data;
-using CaWorkshop.WebUI.Models;
+using CaWorkshop.Infrastructure.Persistence;
+using CaWorkshop.Domain.Entities;
 
 namespace CaWorkshop.WebUI.Controllers
 {
