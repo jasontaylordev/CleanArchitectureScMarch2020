@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace CaWorkshop.Domain.Entities
 {
@@ -9,11 +8,8 @@ namespace CaWorkshop.Domain.Entities
 
         public int ListId { get; set; }
 
-        [Required]
-        [StringLength(280)]
         public string Title { get; set; }
 
-        [StringLength(4000)]
         public string Note { get; set; }
 
         public bool Done { get; set; }

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CaWorkshop.Domain.Entities;
+using CaWorkshop.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CaWorkshop.Infrastructure.Persistence;
-using CaWorkshop.Domain.Entities;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CaWorkshop.WebUI.Controllers
 {
