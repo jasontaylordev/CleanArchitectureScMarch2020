@@ -24,10 +24,10 @@ export class TodoListsClient {
     return this.http.get<TodoList[]>(url);
   }
 
-  postTodoList(list: TodoList): Observable<TodoList> {
+  postTodoList(list: TodoList): Observable<number> {
     const url = this.baseUrl;
 
-    return this.http.post<TodoList>(url, list);
+    return this.http.post<number>(url, list);
   }
 
   putTodoList(id: number, list: TodoList): Observable<TodoList> {
@@ -56,10 +56,9 @@ export class TodoItemsClient {
     this.baseUrl = baseUrl ? `${baseUrl}/api/TodoItems` : '';
   }
 
-  postTodoItem(item: TodoItem): Observable<TodoItem> {
+  postTodoItem(item: TodoItem): Observable<number> {
     const url = this.baseUrl;
-    console.log(url);
-    return this.http.post<TodoItem>(url, item);
+    return this.http.post<number>(url, item);
   }
 
   putTodoItem(id: number, item: TodoItem): Observable<TodoItem> {

@@ -74,7 +74,7 @@ export class TodoComponent implements OnInit {
 
     this.listsClient.postTodoList(list).subscribe(
       result => {
-        list.id = result.id;
+        list.id = result;
         this.lists.push(list);
         this.selectedList = list;
         this.newListModalRef.hide();
@@ -195,7 +195,7 @@ export class TodoComponent implements OnInit {
         .postTodoItem({ ...item, listId: this.selectedList.id })
         .subscribe(
           result => {
-            item.id = result.id;
+            item.id = result;
           },
           error => console.error(error)
         );
