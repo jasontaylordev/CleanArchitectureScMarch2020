@@ -1,5 +1,6 @@
 ﻿using CaWorkshop.WebUI.Data;
 using CaWorkshop.WebUI.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -86,6 +87,8 @@ namespace CaWorkshop.WebUI.Controllers
 
         // DELETE: api/TodoLists/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> DeleteTodoList(int id)
         {
             var todoList = await _context.TodoLists.FindAsync(id);
