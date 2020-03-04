@@ -1,11 +1,11 @@
 import { Component, TemplateRef, OnInit } from '@angular/core';
 import { faPlus, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { TodoListsClient, TodoItemsClient } from '../services/data.service';
-import { TodoListDto, TodoItemDto, PriorityLevelDto,
-         CreateTodoListCommand, UpdateTodoListCommand,
-         CreateTodoItemCommand, UpdateTodoItemCommand
-  } from '../shared/models';
+import { TodoListsClient, TodoItemsClient,
+  TodoListDto, TodoItemDto, PriorityLevelDto,
+  CreateTodoListCommand, UpdateTodoListCommand,
+  CreateTodoItemCommand, UpdateTodoItemCommand
+} from '../services/ca-workshop-api.service';
 
 @Component({
   selector: 'app-todo-component',
@@ -35,7 +35,7 @@ export class TodoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.listsClient.getTodoLists().subscribe(
+    this.listsClient.getTodoListsAbc().subscribe(
       result => {
         this.lists = result.lists;
         this.priorityLevels = result.priorityLevels;

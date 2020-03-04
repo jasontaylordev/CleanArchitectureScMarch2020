@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { API_BASE_URL } from './services/data.service';
+import { API_BASE_URL } from './services/ca-workshop-api.service';
 import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';

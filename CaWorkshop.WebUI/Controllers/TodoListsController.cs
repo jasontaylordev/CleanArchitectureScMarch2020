@@ -23,7 +23,7 @@ namespace CaWorkshop.WebUI.Controllers
 
         // GET: api/TodoLists
         [HttpGet]
-        public async Task<ActionResult<TodosVm>> GetTodoLists()
+        public async Task<ActionResult<TodosVm>> GetTodoListsAbc()
         {
             return await _mediator.Send(new GetTodoListsQuery());
         }
