@@ -14,12 +14,9 @@ namespace CaWorkshop.Infrastructure
             this IServiceCollection services,
             IConfiguration configuration)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<IApplicationDbContext, ApplicationDbContext>(options =>
                 options.UseSqlite(
                     configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddScoped<IApplicationDbContext>(provider =>
-                provider.GetService<ApplicationDbContext>());
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();

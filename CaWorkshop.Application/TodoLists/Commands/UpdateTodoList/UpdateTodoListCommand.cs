@@ -2,6 +2,7 @@
 using CaWorkshop.Application.Common.Interfaces;
 using CaWorkshop.Domain.Entities;
 using MediatR;
+using System.ComponentModel.DataAnnotations;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,6 +12,8 @@ namespace CaWorkshop.Application.TodoLists.Commands.UpdateTodoList
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(240)]
         public string Title { get; set; }
     }
 
