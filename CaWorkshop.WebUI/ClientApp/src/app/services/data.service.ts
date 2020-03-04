@@ -1,5 +1,6 @@
 import { Injectable, Inject, Optional, InjectionToken } from '@angular/core';
-import { TodoItem, TodoList } from '../shared/models';
+import { TodosVm, CreateTodoListCommand, UpdateTodoListCommand,
+  CreateTodoItemCommand, UpdateTodoItemCommand } from '../shared/models';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -18,28 +19,30 @@ export class TodoListsClient {
     this.baseUrl = baseUrl ? `${baseUrl}/api/TodoLists` : '';
   }
 
-  getTodoLists(): Observable<TodoList[]> {
+  getTodoLists(): Observable<TodosVm> {
     const url = this.baseUrl;
 
-    return this.http.get<TodoList[]>(url);
+    return this.http.get<TodosVm>(url);
   }
 
-  postTodoList(list: TodoList): Observable<number> {
+  postTodoList(command: CreateTodoListCommand)
+    : Observable<number> {
     const url = this.baseUrl;
 
-    return this.http.post<number>(url, list);
+    return this.http.post<number>(url, command);
   }
 
-  putTodoList(id: number, list: TodoList): Observable<TodoList> {
+  putTodoList(id: number, command: UpdateTodoListCommand)
+    : Observable<string> {
     const url = `${this.baseUrl}/${id}`;
 
-    return this.http.put<TodoList>(url, list);
+    return this.http.put<string>(url, command);
   }
 
-  deleteTodoList(id: number): Observable<TodoList> {
+  deleteTodoList(id: number): Observable<string> {
     const url = `${this.baseUrl}/${id}`;
 
-    return this.http.delete<TodoList>(url);
+    return this.http.delete<string>(url);
   }
 }
 
@@ -56,20 +59,22 @@ export class TodoItemsClient {
     this.baseUrl = baseUrl ? `${baseUrl}/api/TodoItems` : '';
   }
 
-  postTodoItem(item: TodoItem): Observable<number> {
+  postTodoItem(command: CreateTodoItemCommand): Observable<number> {
     const url = this.baseUrl;
-    return this.http.post<number>(url, item);
+
+    return this.http.post<number>(url, command);
   }
 
-  putTodoItem(id: number, item: TodoItem): Observable<TodoItem> {
+  putTodoItem(id: number, command: UpdateTodoItemCommand)
+    : Observable<string> {
     const url = `${this.baseUrl}/${id}`;
 
-    return this.http.put<TodoItem>(url, item);
+    return this.http.put<string>(url, command);
   }
 
-  deleteTodoItem(id: number): Observable<TodoItem> {
+  deleteTodoItem(id: number): Observable<string> {
     const url = `${this.baseUrl}/${id}`;
 
-    return this.http.delete<TodoItem>(url);
+    return this.http.delete<string>(url);
   }
 }

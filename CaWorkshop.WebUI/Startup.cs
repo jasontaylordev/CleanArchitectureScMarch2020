@@ -1,11 +1,10 @@
 using CaWorkshop.Application;
+using CaWorkshop.Application.Common.Interfaces;
 using CaWorkshop.Infrastructure;
-using CaWorkshop.Infrastructure.Identity;
-using CaWorkshop.Infrastructure.Persistence;
-using Microsoft.AspNetCore.Authentication;
+using CleanArchitecture.WebUI.Common;
+using CleanArchitecture.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +26,8 @@ namespace CaWorkshop.WebUI
             services.AddInfrastructure(Configuration);
             services.AddApplication(Configuration);
 
+            services.AddHttpContextAccessor();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddControllersWithViews();
             services.AddRazorPages();
             // In production, the Angular files will be served from this directory
@@ -65,6 +66,7 @@ namespace CaWorkshop.WebUI
 
             app.UseOpenApi();
             app.UseSwaggerUi3();
+            app.UseCustomExceptionHandler();
 
             app.UseRouting();
 

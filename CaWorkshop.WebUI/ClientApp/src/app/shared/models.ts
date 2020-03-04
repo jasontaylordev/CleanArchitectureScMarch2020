@@ -1,9 +1,9 @@
-export class PriorityLevel {
+export class PriorityLevelDto {
   value: number;
   name: string;
 }
 
-export class TodoItem {
+export class TodoItemDto {
   id: number;
   listId: number;
   title: string;
@@ -12,8 +12,36 @@ export class TodoItem {
   priority: number;
 }
 
-export class TodoList {
+export class TodoListDto {
   id: number;
   title: string;
-  items: TodoItem[];
+  items: TodoItemDto[];
+}
+
+export class TodosVm {
+  priorityLevels: PriorityLevelDto[];
+  lists: TodoListDto[];
+}
+
+export class CreateTodoListCommand {
+  title: string;
+}
+
+export class UpdateTodoListCommand {
+  id: number;
+  title: string;
+}
+
+export class CreateTodoItemCommand {
+  listId: number;
+  title: string;
+}
+
+export class UpdateTodoItemCommand {
+  id: number;
+  listId: number;
+  title: string;
+  done: boolean;
+  priority: number;
+  note: string;
 }

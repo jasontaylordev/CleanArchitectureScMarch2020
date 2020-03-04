@@ -9,8 +9,6 @@ namespace CaWorkshop.Application.TodoLists.Commands.CreateTodoList
 {
     public class CreateTodoListCommand : IRequest<int>
     {
-        [Required]
-        [StringLength(240)]
         public string Title { get; set; }
     }
 

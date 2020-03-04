@@ -1,8 +1,9 @@
-﻿using System;
+﻿using CaWorkshop.Domain.Common;
+using System;
 
 namespace CaWorkshop.Domain.Entities
 {
-    public class TodoItem
+    public class TodoItem : AuditableEntity
     {
         public long Id { get; set; }
 
